@@ -1,0 +1,8 @@
+
+  {
+    "username": "YourUsername",
+    "password": "YourPassword",
+    "invalidusername": "wrongUsername@test.com",
+    "invalidpassword": "wrongPassword"
+    
+  }
