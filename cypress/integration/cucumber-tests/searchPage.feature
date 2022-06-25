@@ -6,9 +6,9 @@ Background: Positive Access: I Navigate to appJobs and web is accessible
         #Then I verify h1 text Flexible job offers tailored to you is displayed
         
 
-Scenario: Click on Join Now Button 
+Scenario: Click on Join Now Button find Stockholm, Stockwell and on footer find Top Cities
     When I click into search area locations should be displayed
-    Then  I choose Stockholm from locations
+    Then I choose Stockholm from locations
     And I assert url page include Stockholm
     And I navigate back to Home page
     Then I enter stock into input area search and Select Stockwell IN
