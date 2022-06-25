@@ -15,13 +15,19 @@ export class SearchPageMyCity extends BasePage {
         .click()
       
     }
-
-    assertPageTitleFlorence() {
-        cy.title().should('eq', 'Part-time / weekend / student app based jobs')
+    
+    filtersQATesting() {
+        cy.get('.toolbar__filtersButton').click()
+        cy.get("div[value='102'] h6[class='aj-text aj-pill__title -bold -bodySmall").click()
     }
 
-    verifyJobsInFlorence() {
-        cy.get(':nth-child(3) > .breadcrumbs__link').should('be.visible')
+    applyFilters() {
+        cy.get('.-confirm').click()
+    }
+
+    filterItemsOne() {
+        cy.get('.-subtleLight.aj-button.toolbar__filtersButton').should('have.length', 1)
+        cy.url().should('include', 'qa-testing')
     }
 
 }

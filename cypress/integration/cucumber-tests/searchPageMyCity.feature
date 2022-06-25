@@ -6,10 +6,12 @@ Background: Positive Access: I Navigate to appJobs and web is accessible
                
 #These steps are found in searchPageMycity and am using as Scenario
 Scenario: Play with search input my location
-    And I am on appJobs website
-    When I enter text Florence into search area location
-    Then I verify title of the page is Part-time / weekend / student app based jobs
-    And I verify jobsInFlorence text should be displayed
+    When I am on appJobs website
+    Then I enter text Florence into search area location
+    And I click on Filters selecting Qa Testing on Modal
+    And I click Apply Filters button
+    Then I verify One item is displayed on Filters and url is qa-testing
+    
 
 
 

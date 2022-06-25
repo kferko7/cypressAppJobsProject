@@ -4,21 +4,23 @@ import { SearchPageMyCity } from '../pages/PageObjects/SearchPageMyCity'
 
 const searchPageMyCity = new SearchPageMyCity()
 
-And('I am on appJobs website', () => {
+When('I am on appJobs website', () => {
     searchPageMyCity.appJobsWeb()
 })
 
-When('I enter text Florence into search area location', () => {
+Then('I enter text Florence into search area location', () => {
     searchPageMyCity.searchInput()
     searchPageMyCity.searchMyNativeCity()
-    searchPageMyCity.assertPageTitleFlorence() 
-
 })
 
-Then('I verify title of the page is Part-time / weekend / student app based jobs',() => {
-    searchPageMyCity.assertPageTitleFlorence() 
+And('I click on Filters selecting Qa Testing on Modal',() => {
+    searchPageMyCity.filtersQATesting()
 })
 
-And('I verify jobsInFlorence text should be displayed',() => {
-    searchPageMyCity.verifyJobsInFlorence()
+And('I click Apply Filters button',() => {
+    searchPageMyCity.applyFilters()
+})
+
+Then('I verify One item is displayed on Filters and url is qa-testing',() => {
+    searchPageMyCity.filterItemsOne()
 })
