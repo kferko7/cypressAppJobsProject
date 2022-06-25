@@ -4,28 +4,21 @@ import { SearchPageMyCity } from '../pages/PageObjects/SearchPageMyCity'
 
 const searchPageMyCity = new SearchPageMyCity()
 
-And('I am on Home Page', () => {
-    searchPageMyCity.assertAppsJobTitle()
+And('I am on appJobs website', () => {
+    searchPageMyCity.appJobsWeb()
 })
 
-Then('I choose Stockholm from locations', () => {
-    searchPage.selectStockholm()
-
-})
-
-And('I assert url page include Stockholm', () => {
-    searchPage.assertStockholmPage()
-})
-
-And('I navigate back to Home page', () => {
-    searchPage.navigateToHome()
-})
-
-Then('I enter stock into input area search and Select Stockwell IN', () => {
-    searchPage.findStockwellInCity()
+When('I enter text Florence into search area location', () => {
+    searchPageMyCity.searchInput()
+    searchPageMyCity.searchMyNativeCity()
+    searchPageMyCity.assertPageTitleFlorence() 
 
 })
 
-And('I sroll to the footer section and get Top Cities text', () => {
-    searchPage.findTopCities()
-}) 
+Then('I verify title of the page is Part-time / weekend / student app based jobs',() => {
+    searchPageMyCity.assertPageTitleFlorence() 
+})
+
+And('I verify jobsInFlorence text should be displayed',() => {
+    searchPageMyCity.verifyJobsInFlorence()
+})
