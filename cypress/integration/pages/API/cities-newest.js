@@ -9,6 +9,7 @@ describe('get api user tests', () => {
 			
 		}).then((res) => {
 			expect(res.status).to.eq(200)
+			expect(res.body.meta.city).to.eq("kenedy-tx")
 			
 			
 		})
