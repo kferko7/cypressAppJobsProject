@@ -6,13 +6,14 @@ export class SearchPage extends BasePage {
 		cy.visit(`${CONFIG.env.url}/`)
 	}
 
-	searchInput() {
+	//Refactored and added on Basepage to avaoid duplicates
+	/*searchInput() {
 		cy.get("input[placeholder='Type your location']")
 			.should('be.visible', {
 				timeout: 5000,
 			})
 			.click()
-	}
+	}*/
 
 	selectStockholm() {
 		cy.get('div[data-value="2"]')
