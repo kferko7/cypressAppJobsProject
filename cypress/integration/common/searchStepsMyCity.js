@@ -4,28 +4,23 @@ import { SearchPageMyCity } from '../pages/PageObjects/SearchPageMyCity'
 
 const searchPageMyCity = new SearchPageMyCity()
 
-And('I am on Home Page', () => {
-    searchPageMyCity.assertAppsJobTitle()
+When('I am on appJobs website', () => {
+    searchPageMyCity.appJobsWeb()
 })
 
-Then('I choose Stockholm from locations', () => {
-    searchPage.selectStockholm()
-
+Then('I enter text Florence into search area location', () => {
+    searchPageMyCity.searchInput()
+    searchPageMyCity.searchMyNativeCity()
 })
 
-And('I assert url page include Stockholm', () => {
-    searchPage.assertStockholmPage()
+And('I click on Filters selecting Qa Testing on Modal',() => {
+    searchPageMyCity.filtersQATesting()
 })
 
-And('I navigate back to Home page', () => {
-    searchPage.navigateToHome()
+And('I click Apply Filters button',() => {
+    searchPageMyCity.applyFilters()
 })
 
-Then('I enter stock into input area search and Select Stockwell IN', () => {
-    searchPage.findStockwellInCity()
-
+Then('I verify One item is displayed on Filters and url is qa-testing',() => {
+    searchPageMyCity.filterItemsOne()
 })
-
-And('I sroll to the footer section and get Top Cities text', () => {
-    searchPage.findTopCities()
-}) 

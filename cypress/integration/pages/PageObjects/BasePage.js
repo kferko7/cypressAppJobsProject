@@ -6,4 +6,12 @@ export class BasePage {
 	
 	}
 
+	searchInput() {
+		cy.get("input[placeholder='Type your location']")
+			.should('be.visible', {
+				timeout: 5000,
+			})
+			.click()
+	}
+
 }
